@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMA</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            /* background-color: #e8e8e8; */
+          
+         
+        }
+        .navbar {
+            background-color: white; /* White background for navbar */
+           
+            margin: 20px; /* Margin around navbar */
+          
+            border-bottom: 1px solid rgb(0, 0, 0);
+            padding: 10px;
+        }
+        .navbar-nav .nav-link {
+            color: black; /* Black text for links */
+            margin-right: 20px; /* Spacing between items */
+        }
+        .navbar-brand {
+            margin-right: 50px; /* Increased space between logo and nav items */
+        }
+        .navbar-brand
+        {
+            color: rgb(71, 71, 71);
+        }
+        .navbar-nav .nav-link {
+    position: relative; /* Position relative for pseudo-element positioning */
+    overflow: hidden;   /* Hide any overflow from the underline */
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px; /* Thickness of the underline */
+    background-color: rgb(5, 14, 119); /* Color of the underline */
+    transform: translateX(-100%); /* Start with the underline hidden */
+    transition: transform 0.3s ease; /* Animation effect */
+}
+
+.navbar-nav .nav-link:hover::after {
+    transform: translateX(0); /* Reveal the underline on hover */
+}
+
+.navbar-toggler
+{
+    color: black;
+    background-color: black;
+}
+
+.start
+{
+    position: relative;
+    margin: 10px;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.ayah
+{
+    position: relative;
+    text-align: center;
+    font-weight: 300;
+    top: 30px;
+    font-size: 30px;
+}
+
+.note {
+    position: relative;
+    text-align: center;
+    font-weight: 300;
+    top: 40px;
+    font-size: 30px;
+    width: 100%; /* Ensures full width if needed */
+    overflow: hidden; /* Hides the text until it's 'written' */
+    white-space: nowrap; /* Keeps the text on a single line */
+    border-right: .15em solid black; /* Creates the typing cursor effect */
+    animation: typing 2s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+
+
+.container {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    padding: 40px;
+    width: 80vw; /* Adjust width for better responsiveness */
+    display: flex; /* Enables flexbox properties inside the container */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 8px; /* Optional rounded corners */
+    margin-top: 90px; /* Positioning from top */
+    max-width: 500px; /* Maximum width for large screens */
+
+}
+
+.getstart {
+    position: relative;
+    padding: 10px 20px; /* More padding for a better button touch area */
+    text-align: center;
+    background-color: rgb(19, 19, 70);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 20px;
+    cursor: pointer; /* Makes the mouse cursor a pointer on hover */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effects */
+  top: 20px;
+  font-weight: 600;
+}
+
+.getstart:hover {
+    background-color: rgb(25, 25, 90); /* Darker shade on hover */
+    transform: translateY(-2px); /* Subtle lift effect on hover */
+}
+.debt , .cadl
+{
+    font-weight: 600;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-sm mb-3">
+        <a class="navbar-brand" href="{{url_for('index')}}" class="logo">Debt managment system </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-6" aria-controls="navbar-6" aria-expanded="false" aria-label="Toggle Navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-6">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="{{url_for('dashboard')}}">dashboard <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="{{url_for('debtors')}}">Debtors</a>
+                <a class="nav-item nav-link" href="{{url_for('add_debtor')}}">add_debtor</a>
+         
+            </div>
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link" href="#">logout</a>
+            </div>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+
+
+<!-- get started -->
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
